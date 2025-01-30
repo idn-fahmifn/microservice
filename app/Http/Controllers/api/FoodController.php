@@ -4,6 +4,7 @@ namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\FoodResource;
+use App\Models\Category;
 use App\Models\Food;
 use Illuminate\Http\Request;
 
@@ -37,9 +38,9 @@ class FoodController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($id)
     {
-        //
+        // 
     }
 
     /**

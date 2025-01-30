@@ -18,7 +18,7 @@ class CategoryResource extends JsonResource
             'id' => $this->id,
             'name' => $this->name,
             'thumbnail' => asset('storage/images/category/'.$this->thumbnail),
-            'total_menu' => $this->food->count()
+            'total_menu' => $this->food->count(),
         ];
     }
 }

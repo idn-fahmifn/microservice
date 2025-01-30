@@ -18,8 +18,8 @@ class FoodResource extends JsonResource
             'id' => $this->id,
             'category_id' => $this->category_id,
             'image' => asset('storage/images/food/'.$this->image),
-            'price' => $this->price,
-            'desc' => $this->desc
+            'price' => number_format($this->price),
+            'desc' => $this->desc,
         ];
     }
 }

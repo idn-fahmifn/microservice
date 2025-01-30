@@ -4,7 +4,9 @@ namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\CategoryResource;
+use App\Http\Resources\FoodResource;
 use App\Models\Category;
+use App\Models\Food;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -15,7 +17,9 @@ class CategoryController extends Controller
     public function index()
     {
         $data = CategoryResource::collection(Category::all());
-        return $data;
+        return response()->json([
+            'data' => $data
+        ]);
     }
 
     /**
@@ -31,9 +35,6 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-
-        
-
         $request->validate([
             'name' => 'string|required',
             'thumbnail' => 'max:10240|required'
@@ -45,15 +46,20 @@ class CategoryController extends Controller
         ]);
 
         return new CategoryResource($request);
-
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($id)
     {
-        //
+        $data = Category::findOrFail($id);
+        $food = FoodResource::collection(Food::where('category_id', $id)->get()->all());
+
+        return response()->json([
+            'data' => $data,
+            'food' => $food,
+        ]);
     }
 
     /**
