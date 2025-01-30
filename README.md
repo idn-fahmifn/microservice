@@ -15,5 +15,5 @@ API :
 
 ## highlight : 
 Highligt Apps : 
-<img src="category.png" width="400" alt="highlight">
+<img src="category.png" width="400" alt="highlight"> <br>
 <img src="category-detail.png" width="400" alt="highlight">
