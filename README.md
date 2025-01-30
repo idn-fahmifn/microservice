@@ -68,6 +68,20 @@ php artisan migrate
 php artisan serve
 ```
 
+7. install node modules
+
+```bash
+npm install
+```
+
+next
+
+```bash
+npm run dev
+```
+
+
+
 
 
 
