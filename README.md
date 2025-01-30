@@ -11,6 +11,7 @@ All Fitur
 API : 
 
 - all category : /api/category
+- detail category : /api/{id}
 - all food : /api/food
 
 ## highlight : 
